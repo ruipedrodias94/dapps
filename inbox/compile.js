@@ -94,15 +94,14 @@ function errorHandling(compiledSources) {
  */
 function writeOutput(compiled, buildPath) {
     fs.ensureDirSync(buildPath);
+
     for (let contractFileName in compiled.contracts) {
-        console.log(contractFileName);
-        let contractName = contractFileName.replace(/.sol/gm, '');
-        contractName = contractName.replace(/(\s\r|\r)/gm,"");
-        console.log('Writing:', contractName + '.json');
+        const contractName = contractFileName.replace('.sol', '');
+        console.log('Writing: ', contractName + '.json');
         fs.outputJsonSync(
             path.resolve(buildPath, contractName + '.json'),
             compiled.contracts[contractFileName][contractName]
-       );
+        );
     }
 }
 
