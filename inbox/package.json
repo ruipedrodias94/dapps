@@ -1,0 +1,20 @@
+{
+  "name": "inbox",
+  "version": "1.0.0",
+  "description": "Inbox dapp project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dapp"
+  ],
+  "author": "Rui Dias",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^8.0.1",
+    "path": "^0.12.7",
+    "solc": "^0.5.9",
+    "stringify": "^5.2.0"
+  }
+}
