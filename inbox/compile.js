@@ -93,16 +93,19 @@ function errorHandling(compiledSources) {
  * @param buildPath - Path of the build folder.
  */
 function writeOutput(compiled, buildPath) {
+    let fileNameTemp;
     fs.ensureDirSync(buildPath);
-
     for (let contractFileName in compiled.contracts) {
-        const contractName = contractFileName.replace('.sol', '');
-        console.log('Writing: ', contractName + '.json');
+        console.log(contractFileName);
+        let contractName = contractFileName.replace(/.sol/gm, '');
+        let str = contractName.replace(/\s/g, "");
         fs.outputJsonSync(
-            path.resolve(buildPath, contractName + '.json'),
-            compiled.contracts[contractFileName][contractName]
-        );
+            path.resolve(buildPath, str + '.json'),
+            compiled.contracts[contractFileName]
+       );
+       fileNameTemp = contractFileName;
     }
+    return fileNameTemp;
 }
 
 // Workflow
@@ -111,4 +114,5 @@ const buildPath = compilingPreperations();
 const config = createConfiguration();
 const compiled = compileSources(config);
 errorHandling(compiled);
-writeOutput(compiled, buildPath);
+const fileName = writeOutput(compiled, buildPath);
+module.exports = compiled.contracts[fileName]; 

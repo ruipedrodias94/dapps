@@ -4,7 +4,7 @@
   "description": "Inbox dapp project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "dapp"
@@ -13,8 +13,11 @@
   "license": "ISC",
   "dependencies": {
     "fs-extra": "^8.0.1",
+    "ganache-cli": "^6.4.4",
+    "mocha": "^6.1.4",
     "path": "^0.12.7",
     "solc": "^0.5.9",
-    "stringify": "^5.2.0"
+    "stringify": "^5.2.0",
+    "web3": "^1.0.0-beta.37"
   }
 }
