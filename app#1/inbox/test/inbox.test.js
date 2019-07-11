@@ -21,12 +21,11 @@ beforeEach(async () => {
 
     // Get a list of all accounts
     accounts = await web3.eth.getAccounts();
-
     //User one of those accounts to deploy the smartcontracts
     // inbox represents what we have in the blockchain;
     inbox = await new web3.eth.Contract((abi))
     .deploy({ data : '0x' + evm.bytecode.object, arguments: [initialMessage]})
-    .send({ from : accounts[0]});
+    .send({ from : accounts[0], gas : '1000000'});
 
     //inbox.setProvider(provider);
 });

@@ -1,0 +1,22 @@
+{
+  "name": "lottery",
+  "version": "1.0.0",
+  "description": "lottery game written in solidity",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 10000"
+  },
+  "author": "Rui Dias",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^8.0.1",
+    "ganache-cli": "^6.4.4",
+    "mocha": "^6.1.4",
+    "node-jq": "^1.9.0",
+    "path": "^0.12.7",
+    "solc": "^0.5.9",
+    "stringify": "^5.2.0",
+    "truffle-hdwallet-provider": "^1.0.11",
+    "web3": "^1.0.0-beta.37"
+  }
+}

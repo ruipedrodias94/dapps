@@ -2,7 +2,7 @@ const HDWalletProvider = require("truffle-hdwallet-provider");
 const Web3 = require("web3");
 const {abi, evm} = require('./compile');
 
-const mnemonic = 'link weather item leopard bargain network inquiry payment edge peasant clever chalk';
+const mnemonic = 'side tongue quit angry artist belt marine diamond roast dust gap board';
 const endpoint = 'https://rinkeby.infura.io/v3/be2590788c5b4521a21a8516a8b3a2b4';
 
 const provider = new HDWalletProvider(mnemonic, endpoint);
@@ -16,7 +16,7 @@ const deploy = async () => {
 
     const result = await new web3.eth.Contract(abi)
     .deploy({data : '0x' + evm.bytecode.object, arguments : ['Hello Portugal!']})
-    .send({gas: '1000000' , from : account});
+    .send({from : account});
 
     console.log('Contract deployed in, ' + result.options.address);
 }
